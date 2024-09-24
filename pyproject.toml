@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "BrainStormML"
+version = "0.1.0"
+description = "Midnight ML Project by Susamay"
+authors = [
+    {name = "Susamay", email = "susamay.sk@gmail.com"}
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "seaborn",
+    "matplotlib",
+    "scikit-learn"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
