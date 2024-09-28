@@ -1,5 +1,6 @@
 import sys  #Built-in functions, exceptions, and other objects.
-import logging
+# import logging
+from src.logger import logging
 
 def error_message_details(error, error_details:sys):
     exec_tb = error_details.exc_info()[2]
@@ -20,6 +21,7 @@ class SusamayException(Exception):
 #     try:
 #         a=1/0
 #     except Exception as e:
+#         logging.info("Logging from exeception file started")
 #         raise SusamayException(e,sys)
 #     #We need to log this
-#     #logging.info("Logging from exeception file started")
+#     #logging.info("Logging from exeception file started") 
