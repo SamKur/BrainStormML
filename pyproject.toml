@@ -15,7 +15,9 @@ dependencies = [
     "seaborn",
     "matplotlib",
     "scikit-learn",
-    "ipykernel"
+    "ipykernel",
+    "xgboost",
+    "catboost"
 ]
 
 [tool.setuptools.packages.find]
