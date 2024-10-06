@@ -17,7 +17,8 @@ dependencies = [
     "scikit-learn",
     "ipykernel",
     "xgboost",
-    "catboost"
+    "catboost",
+    "dill"
 ]
 
 [tool.setuptools.packages.find]

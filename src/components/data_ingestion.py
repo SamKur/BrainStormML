@@ -10,6 +10,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation, DataTransformationConfig
 
 # Default values are provided using the os.path.join() function to ensure proper file path formatting across different operating systems.
 @dataclass      #Class decorator to initialize & represent it as string
@@ -46,7 +47,9 @@ class DataIngestion: # Connection with datasource (like MongoDB, MySQL, csv, cli
         except Exception as e:
             raise SusamayException(e,sys)
         
-if __name__=="__main__":
+if __name__=="__main__":  #checking data_transformation.py file
     obj=DataIngestion()
-    train_data,test_data=obj.initiate_data_ingestion() #run upto to check 
+    train_data,test_data = obj.initiate_data_ingestion() #run upto to check 
 
+    data_transformation = DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)
