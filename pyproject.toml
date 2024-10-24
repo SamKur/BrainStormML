@@ -19,7 +19,15 @@ dependencies = [
     "xgboost",
     "catboost",
     "dill"
+    # Add other dependencies here
+]
+
+[project.optional-dependencies]
+dev = [
+    # Add development-specific dependencies here
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+# pip install -e . -> to install this project in editable mode 
