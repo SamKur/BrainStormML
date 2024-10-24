@@ -3,11 +3,7 @@ import sys
 from dataclasses import dataclass
 
 from catboost import CatBoostRegressor
-from sklearn.ensemble import (
-    AdaBoostRegressor,
-    GradientBoostingRegressor,
-    RandomForestRegressor,
-)
+from sklearn.ensemble import AdaBoostRegressor, GradientBoostingRegressor, RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 from sklearn.tree import DecisionTreeRegressor
@@ -45,6 +41,7 @@ class ModelTrainer:
                 "CatBoosting Regressor": CatBoostRegressor(verbose=False),
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
+            #Hyperparameter tuning -> we can also do this by  (config_file+YAML_file)
             params={
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -84,7 +81,7 @@ class ModelTrainer:
             }
 
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
-                                             models=models,param=params)
+                                             models=models,param=params) #hyperparameters in param
             
             ## To get best model score from dict
             best_model_score = max(sorted(model_report.values()))

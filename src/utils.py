@@ -29,7 +29,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             # Get the hyperparameters for the current model
             para = param[model_name]
 
-            # Perform grid search to find the best parameters
+            # Perform grid search to find the best parameters (hyperparameter tuning)
             gs = GridSearchCV(model, para, cv=3)
             gs.fit(X_train, y_train)
 
