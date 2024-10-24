@@ -1,5 +1,7 @@
 # Data transformation is the process of converting data from one format or structure to another
 
+# feature engineering + data cleaning + cat_feat ~> num_feat etc
+
 import sys
 from dataclasses import dataclass
 
@@ -18,7 +20,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
