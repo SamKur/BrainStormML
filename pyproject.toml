@@ -18,7 +18,9 @@ dependencies = [
     "ipykernel",
     "xgboost",
     "catboost",
-    "dill"
+    "dill",
+    "Flask"
+
     # Add other dependencies here
 ]
 

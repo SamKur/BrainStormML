@@ -34,11 +34,13 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             gs.fit(X_train, y_train)
 
             # Use the best found parameters
-            best_model = gs.best_estimator_
+            # best_model = gs.best_estimator_
+            model.set_params(**gs.best_params_)
+            model.fit(X_train,y_train)
 
             # Predict on train and test sets
-            y_train_pred = best_model.predict(X_train)
-            y_test_pred = best_model.predict(X_test)
+            y_train_pred = model.predict(X_train)
+            y_test_pred = model.predict(X_test)
 
             # Calculate R2 score for both train and test sets
             train_model_score = r2_score(y_train, y_train_pred)
@@ -51,3 +53,11 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
 
     except Exception as e:
         raise SusamayException(e, sys)
+
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as f:
+            return dill.load(f)
+
+    except Exception as e:
+        raise SusamayException(e,sys)
