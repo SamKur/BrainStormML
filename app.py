@@ -16,7 +16,7 @@ def index():
 def predict_datapoint():
     print("predict_datapoint route accessed")  # Added print for debugging
     if request.method == 'GET':
-        return render_template('home.html')
+        return render_template('home_beautified.html')
     if request.method == 'POST':
         print("predict_datapoint POST accessed")  # Added print for debugging
 
@@ -38,7 +38,7 @@ def predict_datapoint():
         print("In Prediction") # after this getting error BUT?
         result = predict_pipeline.predict(data_df)
         print("After Prediction")
-        return render_template('home.html', results=result[0])
+        return render_template('home_beautified.html', results=int(result[0]))
 
 
 
