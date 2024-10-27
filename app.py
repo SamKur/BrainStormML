@@ -42,5 +42,7 @@ def predict_datapoint():
 
 
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# Elastic Beanstalk uses its own WSGI server (like gunicorn) to run your application, so this block isn’t necessary.
+# We can run locally by - flask run 
+# if __name__ == "__main__":
+#     app.run(host='0.0.0.0', port=5000, debug=True)
